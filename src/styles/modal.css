@@ -11,10 +11,10 @@
 /* Landing Page */
 
 body {
-  margin: 0;
+  /* margin: 0; */
   display: flex;
   flex-direction: column;
-  background-image: url("background.png");
+  /* background-image: url("background.png"); */
   font-family: var(--font-default);
   font-size: 18px;
   max-width: 1300px;
@@ -26,8 +26,13 @@ p {
   padding: 0.5vw;
 }
 
+/* navBar */
 img {
   padding-right: 1rem;
+  /* ajouter */
+  width: auto;
+  height: auto;
+  /* fin d'ajout */
 }
 
 .topnav {
@@ -56,6 +61,7 @@ img {
   background-color: #ff0000;
   color: #ffffff;
   border-radius: 15px;
+  text-decoration: underline; /* ajouter */
 }
 
 .topnav a.active {
@@ -90,9 +96,7 @@ img {
   }
 }
 
-
-
- @media screen and (max-width: 540px) {
+@media screen and (max-width: 540px) {
   .topnav a {display: none;}
   .topnav a.icon {
     float: right;
@@ -111,8 +115,6 @@ main {
   margin: 1px 20px 15px;
   border-radius: 2rem;
   text-align: justify;
-
-
 }
 
 .modal-btn {
@@ -226,6 +228,28 @@ input {
 .formData[data-error-visible="true"] .text-control {
   border: 2px solid #e54858;
 }
+
+/* ajout */
+.error span{
+  opacity: 1;
+  font-size: 0.6em;
+  color: red;
+}
+/*Error radioButton & checkbox*/
+.error p{
+  opacity: 1;
+  font-size: 0.6em;
+  color: red;
+}
+
+.error input{
+  border: 2px solid #e54858;
+} 
+
+.formData .text-control:valid{
+  border: 2px solid rgb(5, 190, 5)
+}
+/* fin d'ajout */
 /* 
 input[data-error]::after {
     content: attr(data-error);
@@ -321,11 +345,37 @@ input[data-error]::after {
 .close:after {
   transform: rotate(-45deg);
 }
+/* form confirmation */
+.formConfirmation{
+  width: 100%;
+  text-align: center;
+  align-items: center;
+  font-size: 38px;
+  /* font-weight: normal; pas besoin */
+  height: 700px;
+  padding-top: 20px; /*40%*/
+  display: none;
+  margin-top: 150px;
+}
+
+.btn-confirmation-submit{
+  background: #fe142f;
+  display: block;
+  margin: 0 auto;
+  margin-top: 330px;
+  border-radius: 7px;
+  font-size: 1rem;
+  padding: 12px 82px;
+  color: #fff;
+  cursor: pointer;
+  border: 0;
+}
+
 .btn-submit,
 .btn-signup {
   background: #fe142f;
   display: block;
-  margin: 0 auto;
+  margin: 40 auto; /* changement margin: 0 auto; --> margin: 40px auto; */
   border-radius: 7px;
   font-size: 1rem;
   padding: 12px 82px;
@@ -405,7 +455,12 @@ input[data-error]::after {
   font-size: 16px;
 }
 .hero-section {
-  min-height: 93vh;
+  /*   min-height: 93vh;*/
+  min-height: 60vh; /* ça sert à rien... */
+  /* je peux rajouter ça comme l'autre mais sa sert à rien
+  height: 650px;
+  width: 100%;
+  */
   border-radius: 10px;
   display: grid;
   grid-template-columns: repeat(12, 1fr);
@@ -456,12 +511,15 @@ input[data-error]::after {
 }
 .hero-img {
   grid-column: span 8;
+  object-fit: cover;
 }
 .hero-img img {
-  width: 100%;
+  margin-left : 10%; /* ajouter */
+  width: 90%; /* changer de 100% --> 90% */
   height: 100%;
   display: block;
   padding: 0;
+  object-fit: cover; /* on laisse l'option fit cover sinon l'image se rétrécit */
 }
 .copyrights {
   color: #fe142f;
