@@ -18,6 +18,7 @@ const xcloseModal = document.querySelector(".close");
 console.log(xcloseModal);
 
 function setXCloseModal() {
+    console.log("test d'entré setXCloseModal")
     document.querySelector(".modal-body").style.display = "block";
     document.querySelector(".formConfirmation").style.display = "none";
 
@@ -37,6 +38,8 @@ function setXCloseModal() {
 
     console.log('test2');
     document.querySelector(".main-navbar").style.zIndex = 2;
+
+    xcloseModal.classList.remove("cleanForm");
 
     // document.querySelectorAll('input[name = "location"]').checked = false;
 };
@@ -202,15 +205,18 @@ function submit(e) {
     else {
         document.querySelector(".modal-body").style.display = "none";
         document.querySelector(".formConfirmation").style.display = "block";
+
+        xcloseModal.classList.add("cleanForm");
+
+        const xcleanModal = document.querySelector(".cleanForm");
+
+        xcleanModal.addEventListener("click", (e) => setXCloseModal(e));
     }
 
-};
-
-const quantityContainer = document.querySelectorAll('.formData')[4]
-console.log(quantityContainer.values);
+}
 
 signupInput.addEventListener("click", (e) => setZIndexSignup(e));
-xcloseModal.addEventListener("click", (e) => setXCloseModal(e));
+//xcloseModal.addEventListener("click", (e) => setXCloseModal(e));
 submitInput.addEventListener("click", (e) => submit(e));
 
 
