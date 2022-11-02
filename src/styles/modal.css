@@ -8,13 +8,12 @@
   margin: 0;
   padding: 0;
 }
-/* Landing Page */
 
+
+/* Landing Page */
 body {
-  /* margin: 0; */
   display: flex;
   flex-direction: column;
-  /* background-image: url("background.png"); */
   font-family: var(--font-default);
   font-size: 18px;
   max-width: 1300px;
@@ -29,22 +28,23 @@ p {
 /* navBar */
 img {
   padding-right: 1rem;
-  /* ajouter */
   width: auto;
   height: auto;
-  /* fin d'ajout */
 }
 
 .topnav {
   overflow: hidden;
   margin: 3.5%;
 }
+
 .header-logo {
     float: left;
 }
+
 .main-navbar {
     float: right;
 }
+
 .topnav a {
   float: left;
   display: block;
@@ -73,37 +73,6 @@ img {
 .topnav .icon {
   display: none;
 }
-
-/* @media screen and (max-width: 768px) {
-  .topnav a {display: none;}
-  .topnav a.icon {
-    float: right;
-    display: block;
-  }
-}
-
-@media screen and (max-width: 768px) {
-  .topnav.responsive {position: relative;}
-  .topnav.responsive .icon {
-    position: absolute;
-    right: 0;
-    top: 0;
-  }
-  .topnav.responsive a {
-    float: none;
-    display: block;
-    text-align: left;
-  }
-}
-
-@media screen and (max-width: 540px) {
-  .topnav a {display: none;}
-  .topnav a.icon {
-    float: right;
-    display: block;
-    margin-top: -15px;
-  }
-}  */
 
 main {
   font-size: 130%;
@@ -139,8 +108,8 @@ main {
   font-family: var(--font-slab);
 }
 
-/* Modal form */
 
+/* Modal form */
 .button {
   background: #fe142f;
   margin-top: 0.5em;
@@ -229,19 +198,17 @@ input {
   border: 2px solid #e54858;
 }
 
-/* ajout */
+/* Error input, radioButton & checkbox */
 .error span{
   opacity: 1;
   font-size: 0.6em;
   color: red;
 }
-/*Error radioButton & checkbox*/
 .error p{
   opacity: 1;
   font-size: 0.6em;
   color: red;
 }
-
 .error input{
   border: 2px solid #e54858;
 } 
@@ -249,13 +216,7 @@ input {
 .formData .text-control:valid{
   border: 2px solid rgb(5, 190, 5)
 }
-/* fin d'ajout */
-/* 
-input[data-error]::after {
-    content: attr(data-error);
-    font-size: 0.4em;
-    color: red;
-} */
+
 .checkbox-label,
 .checkbox2-label {
   position: relative;
@@ -345,19 +306,25 @@ input[data-error]::after {
 .close:after {
   transform: rotate(-45deg);
 }
+
 /* form confirmation */
 .formConfirmation{
   width: 100%;
   text-align: center;
   align-items: center;
   font-size: 38px;
-  /* font-weight: normal; pas besoin */
   height: 700px;
-  padding-top: 20px; /*40%*/
+  padding-top: 20px;
   display: none;
   margin-top: 150px;
 }
 
+.btn-submit--center{
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 .btn-confirmation-submit{
   background: #fe142f;
   display: block;
@@ -375,7 +342,7 @@ input[data-error]::after {
 .btn-signup {
   background: #fe142f;
   display: block;
-  margin: 40 auto; /* changement margin: 0 auto; --> margin: 40px auto; */
+  margin: 40 auto;
   border-radius: 7px;
   font-size: 1rem;
   padding: 12px 82px;
@@ -383,6 +350,8 @@ input[data-error]::after {
   cursor: pointer;
   border: 0;
 }
+
+
 /* custom select styles */
 .custom-select {
   position: relative;
@@ -390,7 +359,6 @@ input[data-error]::after {
   font-size: 1.1rem;
   font-weight: normal;
 }
-
 .custom-select select {
   display: none;
 }
@@ -455,12 +423,7 @@ input[data-error]::after {
   font-size: 16px;
 }
 .hero-section {
-  /*   min-height: 93vh;*/
-  min-height: 60vh; /* ça sert à rien... */
-  /* je peux rajouter ça comme l'autre mais sa sert à rien
-  height: 650px;
-  width: 100%;
-  */
+  min-height: 60vh;
   border-radius: 10px;
   display: grid;
   grid-template-columns: repeat(12, 1fr);
@@ -514,12 +477,12 @@ input[data-error]::after {
   object-fit: cover;
 }
 .hero-img img {
-  margin-left : 10%; /* ajouter */
-  width: 90%; /* changer de 100% --> 90% */
+  margin-left : 10%;
+  width: 90%;
   height: 100%;
   display: block;
   padding: 0;
-  object-fit: cover; /* on laisse l'option fit cover sinon l'image se rétrécit */
+  object-fit: cover;
 }
 .copyrights {
   color: #fe142f;
@@ -536,44 +499,6 @@ footer {
   padding-right: 2vw;
   margin: 0 20px;
 }
-/* @media screen and (max-width: 800px) {
-  .hero-section {
-    display: block;
-    box-shadow: unset;
-  }
-  .hero-content {
-    background: #fff;
-    color: #000;
-    padding: 20px;
-  }
-  .hero-content::after {
-    content: unset;
-  }
-  .hero-content .btn-signup {
-    display: none;
-  }
-  .hero-headline {
-    font-size: 4.5rem;
-    white-space: normal;
-  }
-  .hero-text {
-    width: unset;
-    font-size: 1.5rem;
-  }
-  .hero-img img {
-    border-radius: 10px;
-    margin-top: 40px;
-  }
-  .hero-section > .btn-signup {
-    display: block;
-    margin: 32px auto 10px;
-    padding: 12px 35px;
-  }
-  .copyrights {
-    margin-top: 50px;
-    text-align: center;
-  }
-} */
 
 @keyframes modalopen {
   from {

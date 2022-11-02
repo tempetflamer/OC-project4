@@ -1,189 +1,181 @@
   @media screen and (max-width: 980px) {
-    .hero-section {
-      display: block;
-      box-shadow: unset;
-    }
-    .hero-content {
-      background: #fff;
-      color: #000;
-      padding: 20px;
-    }
-    .hero-content::after {
-      content: unset;
-    }
-    .hero-content .btn-signup {
-      display: none;
-    }
-    .hero-headline {
-      font-size: 4.5rem;
-      white-space: normal;
-      font-weight: 700;
-    }
-    .hero-text {
-      width: unset;
-      font-size: 1.5rem;
-    }
-    .hero-img {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-    .hero-img img {
-      border-radius: 10px;
-      margin: 0 0 0 0;
-      margin-top: 20px;
-    }
-    .hero-section > .btn-signup {
-      display: block;
-      margin: 32px auto 10px;
-      padding: 15px 50px;
-    }
-    .copyrights {
-      margin-top: 40px;
-      text-align: center;
-    }
-  }
-
-@media screen and (max-width: 768px) {
-    .topnav a {overflow: hidden;}
-    .topnav a {display: none;}
-    .topnav a.icon {
-      float: right;
-      display: block;
-    }
-  }
-  
-  @media screen and (max-width: 768px) {
-    .header-logo > img {
-        width: 80%;
-    }
-    .topnav.responsive {position: relative;}
-    .topnav.responsive .icon {
-      position: absolute;
-      right: 0;
-      top: 0;
-    }
-    .topnav.responsive a {
-      float: none;
-      display: block;
-      text-align: left;
-    }
-
-    .main-navbar {
-        position: fixed;
-        right: 0;
-        background: white;
-        z-index: 10;
+      .hero-section {
+          display: block;
+          box-shadow: unset;
       }
 
-/*     .main-navbar{
-        position: absolute;
-        display: flex;
-        z-index: 99;  
-        right: 5%; 
-        height: 100%;
-        flex-direction: column;
-    }
-    
-
-    Test
-    .topnav.responsive .main-navbar:nth-child(3){
-        margin-right: 500px;
-        height: 100%;
-        width: 100%;
-        opacity: 1;
-        display: flex;
-        position: absolute;
-        z-index: 1000;   
-        color: black;
-    }
-
-    .topnav.responsive .main-navbar{
-        position: absolute;
-        display: flex;
-        flex-direction: column;
-        z-index: 1000;   
-        height: 100%;
-
-    }
- */
-/*     .main-navbar:nth-child(1){
-        position: absolute;
-        z-index: 1000;   
-    } */
-    /*
-            position: absolute;
-          z-index: 1000;
-      height: 48px;
-      width: 48px;
-      */
-
-      .topnav i {
-        color: red;
+      .hero-content {
+          background: #fff;
+          color: #000;
+          padding: 20px;
       }
-      .topnav a:hover i{
-        color: white;
+
+      .hero-content::after {
+          content: unset;
       }
-      .topnav.responsive i {
-        color: white;
+
+      .hero-content .btn-signup {
+          display: none;
       }
 
       .hero-headline {
-        font-size: 3.5rem;
+          font-size: 4.5rem;
+          white-space: normal;
+          font-weight: 700;
       }
-      .hero-text {
-        font-size: 1.2rem;
-        margin-top: 25px;
-      }
-  }
-  
-  @media screen and (max-width: 540px) {
-/*  a part margin-top -15, deja dans media querie 768   
-    .topnav a {display: none;}
-    .topnav a.icon {
-      float: right;
-      display: block;
-      margin-top: -15px;
-    } */
 
-    .hero-headline {
-        font-size: 2.6rem;
-      }
       .hero-text {
-        font-size: 1.1rem;
+          width: unset;
+          font-size: 1.5rem;
       }
+
+      .hero-img {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+      }
+
+      .hero-img img {
+          border-radius: 10px;
+          margin: 0 0 0 0;
+          margin-top: 20px;
+      }
+
+      .hero-section>.btn-signup {
+          display: block;
+          margin: 32px auto 10px;
+          padding: 15px 50px;
+      }
+
       .copyrights {
-       font-size: 0.9rem;
+          margin-top: 40px;
+          text-align: center;
       }
-  } 
-
-  @media screen and (max-width: 390px) {
-    .hero-headline {
-      font-size: 2rem;
-    }
-    .hero-text {
-      font-size: 0.9rem;
-    }
-    .copyrights {
-        font-size: 0.7rem;
-       }
-       .hero-section {
-    margin-bottom: -15%;
-      }
-/*  abandonner modif     .
-        btn-signup .modal-btn {
-        margin-top: 0.5em;
-        padding: 20px 20px;
-        font-size: 16px;
-      }
- */
-       
   }
 
+  @media screen and (max-width: 768px) {
+      .topnav a {
+          overflow: hidden;
+      }
 
-  /*
-  a partir de 980 centrer apreil enrte a droite et a gauche
+      .topnav a {
+          display: none;
+      }
 
-  texte qui ne va pas a la ligne a partir de 460
+      .topnav a.icon {
+          float: right;
+          display: block;
+      }
 
-  */
+/*       .btn-signup:active .main-navbar {
+          z-index: -1;
+      } */
+
+      .header-logo>img {
+          width: 80%;
+      }
+
+      .topnav.responsive {
+          position: relative;
+      }
+
+      .topnav.responsive .icon {
+          position: absolute;
+          right: 0;
+          top: 0;
+      }
+
+      .topnav.responsive a {
+          float: none;
+          display: block;
+          text-align: left;
+      }
+
+      .main-navbar {
+          position: fixed;
+          right: 0;
+          background: white;
+          z-index: 2;
+      }
+
+/*       .main-navbar--form {
+          z-index: 1;
+      } */
+
+      .topnav.responsive .main-navbar {
+          box-shadow: 0 0 2px 1px rgb(255, 0, 0, 0.1);
+      }
+
+      .topnav i {
+          color: red;
+      }
+
+      .topnav a:hover i {
+          color: white;
+      }
+
+      .topnav.responsive i {
+          color: white;
+      }
+
+      .hero-headline {
+          font-size: 3.5rem;
+      }
+
+      .hero-text {
+          font-size: 1.2rem;
+          margin-top: 30px;
+      }
+  }
+
+  @media screen and (max-width: 540px) {
+      .hero-content {
+        overflow-wrap: anywhere;
+      }
+
+      .hero-headline {
+          font-size: 2.6rem;
+      }
+
+      .hero-text {
+          font-size: 1.1rem;
+      }
+
+      .copyrights {
+          font-size: 0.9rem;
+      }
+  }
+
+  @media screen and (max-width: 460px) {
+      .hero-headline {
+          font-size: 2.4rem;
+      }
+
+      .hero-text {
+          font-size: 1rem;
+          margin-right: 50px;
+      }
+
+      .copyrights {
+          font-size: 0.9rem;
+      }
+  }
+
+  @media screen and (max-width: 392px) {
+      .hero-headline {
+          font-size: 2rem;
+      }
+
+      .hero-text {
+          font-size: 0.9rem;
+          margin-right: 80px;
+      }
+
+      .copyrights {
+          font-size: 0.7rem;
+      }
+
+      .hero-section {
+          margin-bottom: -15%;
+      }
+  }

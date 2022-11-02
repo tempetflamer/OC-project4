@@ -10,16 +10,53 @@ const inputs = document.querySelectorAll(
 
 // Button to submit the form
 const submitInput = form[form.length - 1];
+console.log(submitInput);
+var signupInput = document.querySelectorAll(".btn-signup")[1]; //hero-content
+//var signupInput = document.querySelectorAll(".btn-signup")
+console.log(signupInput);
+const xcloseModal = document.querySelector(".close");
+console.log(xcloseModal);
 
-/**
- * exemple of regular expression
- * "^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$"
- * ^([A-Za-z]|[0-9])+$ 
- * [a-z0-9]+@[a-z]+\.[a-z]{2,3} 
- * /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/ 
- * /^[\w_-]+@[\w-]+\.[a-z]{2,4}$/i //celui d'un autre étudiant - ca veut dire quoi le i
- * /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
- */ 
+function setXCloseModal() {
+    document.querySelector(".modal-body").style.display = "block";
+    document.querySelector(".formConfirmation").style.display = "none";
+
+    document.getElementById('first').value = '';
+    document.getElementById('last').value = '';
+    document.getElementById('email').value = '';
+    document.getElementById('birthdate').value = '';
+    document.getElementById('quantity').value = '';
+
+    for (let i = 0; i < 7; i++) {
+        document.querySelectorAll(".formData")[i].classList.remove("error");
+    }
+
+    for (let i = 1; i < 7; i++) {
+        document.getElementById('location' + i).checked = false;
+    }
+
+    console.log('test2');
+    document.querySelector(".main-navbar").style.zIndex = 2;
+
+    // document.querySelectorAll('input[name = "location"]').checked = false;
+};
+/* const setXCloseModal = () => {
+    document.querySelector(".modal-body").style.display = "block";
+    document.querySelector(".formConfirmation").style.display = "none";
+};
+ */
+/* const setZIndexSignup = () => {
+        console.log('test');
+        document.querySelector(".main-navbar").style.zIndex = 5;
+}; */
+
+function setZIndexSignup() {
+    console.log('test');
+    document.querySelector(".main-navbar").style.zIndex = 1;
+};
+
+
+
 
 /**
 * function firstname, lastname, email, birthdate, quantity
@@ -35,10 +72,12 @@ const inputChecker = (value, i) => {
     let isValid = false;
 
     if (i == 0 || i == 1 || i == 3 || i == 4) {
-        if (value.length < 2) {
+        if (value.length < 2 && i == 0 || value.length < 2 && i == 1) {
             Container.classList.add("error");
             if (i == 0) { errorDisplay.textContent = "Veuillez entrer 2 caractères ou plus pour le champ du prénom."; }
             if (i == 1) { errorDisplay.textContent = "Veuillez entrer 2 caractères ou plus pour le champ du nom."; }
+        } else if (!value && i == 3 || !value && i == 4) {
+            Container.classList.add("error");
             if (i == 3) { errorDisplay.textContent = "Veuillez entrer une date de naissance."; }
             if (i == 4) { errorDisplay.textContent = "Veuillez entrer un chiffre."; }
         } else {
@@ -46,9 +85,29 @@ const inputChecker = (value, i) => {
             isValid = true;
         }
     }
+
+    /*     if (i == 0 || i == 1 || i == 3 || i == 4) {
+            if (value.length < 2 && i == 0 || value.length < 2 && i == 1) {
+                Container.classList.add("error");
+                if (i == 0) { errorDisplay.textContent = "Veuillez entrer 2 caractères ou plus pour le champ du prénom."; }
+                if (i == 1) { errorDisplay.textContent = "Veuillez entrer 2 caractères ou plus pour le champ du nom."; }
+            } else {
+                errorDisplay.textContent = "";
+                isValid = true;
+            }
+            if (!value) {
+                Container.classList.add("error");
+                if (i == 3) { errorDisplay.textContent = "Veuillez entrer une date de naissance."; }
+                if (i == 4) { errorDisplay.textContent = "Veuillez entrer un chiffre."; }
+            } else {
+                errorDisplay.textContent = "";
+                isValid = true;
+            }
+        } */
+
     if (i == 2) {
-        if (!value.match(/^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/)) {
-            emailContainer.classList.add("error");
+        if (!value.match(/[a-zA-Z0-9]+@[a-zA-Z]+\.[a-zA-Z]{2,9}/mg)) {
+            Container.classList.add("error");
             errorDisplay.textContent = "Veuillez entrer une adresse mail valide.";
         } else {
             errorDisplay.textContent = "";
@@ -124,7 +183,7 @@ function submit(e) {
     const quantity = document.getElementById('quantity').value;
     console.log('firstname checker', firstname, 'lastname checker', lastname, 'email checker', email, 'birthdate checker', birthdate, 'quantity checker', quantity);
 
-    console.log(inputChecker(firstname, 0), inputChecker(lastname, 1), emailChecker(email, 2), birthdateChecker(birthdate, 3), quantityChecker(quantity, 4));
+    console.log(inputChecker(firstname, 0), inputChecker(lastname, 1), inputChecker(email, 2), inputChecker(birthdate, 3), inputChecker(quantity, 4));
 
     rbChecker();
     checkboxChecker();
@@ -135,7 +194,7 @@ function submit(e) {
      * if valid, switch to confirmation modal,
      * else stay on the registration modal and preventing the display of the confirmation modal 
      */
-    if ((!firstChecker(firstname) || !lastChecker(lastname) || !emailChecker(email) || !birthdateChecker(birthdate) || !quantityChecker(quantity) || !rbChecker() || !checkboxChecker())) {
+    if ((!inputChecker(firstname, 0) || !inputChecker(lastname, 1) || !inputChecker(email, 2) || !inputChecker(birthdate, 3) || !inputChecker(quantity, 4) || !rbChecker() || !checkboxChecker())) {
         console.log("error");
         document.querySelector(".modal-body").style.display = "block";
         document.querySelector(".formConfirmation").style.display = "none";
@@ -150,9 +209,12 @@ function submit(e) {
 const quantityContainer = document.querySelectorAll('.formData')[4]
 console.log(quantityContainer.values);
 
+signupInput.addEventListener("click", (e) => setZIndexSignup(e));
+xcloseModal.addEventListener("click", (e) => setXCloseModal(e));
 submitInput.addEventListener("click", (e) => submit(e));
 
 
 
 
 //faudra rajouté un reset des champ une fois le formulaire validé - ou en tout cas faire les tests
+// ça reset les champ dans les deux cas fermeture de la fenêtre classqieu puis quand on est sur le page de confirmation
