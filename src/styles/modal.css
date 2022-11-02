@@ -74,7 +74,7 @@ img {
   display: none;
 }
 
-@media screen and (max-width: 768px) {
+/* @media screen and (max-width: 768px) {
   .topnav a {display: none;}
   .topnav a.icon {
     float: right;
@@ -103,7 +103,7 @@ img {
     display: block;
     margin-top: -15px;
   }
-} 
+}  */
 
 main {
   font-size: 130%;
@@ -536,7 +536,7 @@ footer {
   padding-right: 2vw;
   margin: 0 20px;
 }
-@media screen and (max-width: 800px) {
+/* @media screen and (max-width: 800px) {
   .hero-section {
     display: block;
     box-shadow: unset;
@@ -573,7 +573,7 @@ footer {
     margin-top: 50px;
     text-align: center;
   }
-}
+} */
 
 @keyframes modalopen {
   from {
