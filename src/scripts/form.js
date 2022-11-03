@@ -122,7 +122,7 @@ function submit(e) {
 
         closeBtn.classList.add("cleanForm");
         const xcleanModal = document.querySelector(".cleanForm");
-        xcleanModal.addEventListener("click", (e) => setXCloseModal(e));
+        xcleanModal.addEventListener("click", (e) => setCleanModal(e));
     }
 
 }

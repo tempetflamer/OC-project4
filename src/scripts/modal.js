@@ -6,7 +6,6 @@ const btnSubmit = document.querySelector(".btn-submit");
 const modalConfirmation = document.querySelector(".formConfirmation");
 const spanModalValid = document.querySelector(".formConfirmation > span");
 const btnConfirmSubmit = document.querySelector(".btn-confirmation-submit");
-const xcloseModal = document.querySelector(".close");
 var signupInput = document.querySelectorAll(".btn-signup")[1];
 
 
@@ -40,7 +39,7 @@ function closeModalConfirmation() {
 }
 
 // Reset modal
-function setXCloseModal() {
+function setCleanModal() {
   document.querySelector(".modal-body").style.display = "block";
   document.querySelector(".formConfirmation").style.display = "none";
 
