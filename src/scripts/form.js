@@ -1,15 +1,8 @@
 const form = document.querySelector("form");
-// Inputs by id
-const inputs = document.querySelectorAll(
-    "#first, #last, #email, #birthdate, #quantity, input[name=location] , #checkbox1 "
-);
+
 // Button to submit the form
 const submitInput = form[form.length - 1];
 
-// function to change menu zindex
-function setZIndexSignup() {
-    document.querySelector(".main-navbar").style.zIndex = 1;
-}
 
 /**
 * function to test the validity of firstname, lastname, email, birthdate, quantity

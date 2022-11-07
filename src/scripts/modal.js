@@ -6,20 +6,45 @@ const btnSubmit = document.querySelector(".btn-submit");
 const modalConfirmation = document.querySelector(".formConfirmation");
 const spanModalValid = document.querySelector(".formConfirmation > span");
 const btnConfirmSubmit = document.querySelector(".btn-confirmation-submit");
-var signupInput = document.querySelectorAll(".btn-signup")[1];
+var btnSignup = document.querySelectorAll(".btn-signup")[1];
 
 
 // launch modal event
 modalBtn.forEach((btn) => btn.addEventListener("click", launchModal));
+
+// function to format min and max in birthdate
+function birthdate(){
+  const date = new Date();
+  const year = date.getFullYear();
+  const month = ('0' + (date.getMonth() + 1)).slice(-2);
+  const day = ('0' + date.getDate()).slice(-2)
+  const yearMin = year - 100;
+  const yearMax = year - 16;
+
+  document.getElementById('birthdate').min =yearMin+'-'+month+'-'+day;
+  document.getElementById('birthdate').max =yearMax+'-'+month+'-'+day;
+}
+
+
+// function to change menu zindex
+function setZIndexSignup() {
+  document.querySelector(".main-navbar").style.zIndex = 1;
+}
 
 // launch modal form
 function launchModal() {
   modalbg.style.display = "block";
 }
 
+function initModal() {
+  setZIndexSignup();
+  birthdate();
+}
+
 // Close modal form
 function closeModal() {
   modalbg.style.display = "none";
+  document.querySelector(".main-navbar").style.zIndex = 2;
 }
 
 closeBtn.addEventListener("click", closeModal);
@@ -61,5 +86,5 @@ function setCleanModal() {
   closeBtn.classList.remove("cleanForm");
 };
 
-signupInput.addEventListener("click", (e) => setZIndexSignup(e));
+btnSignup.addEventListener("click", (e) => initModal(e));
 btnConfirmSubmit.addEventListener("click", closeModalConfirmation);
