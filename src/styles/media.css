@@ -67,10 +67,6 @@
           display: block;
       }
 
-/*       .btn-signup:active .main-navbar {
-          z-index: -1;
-      } */
-
       .header-logo>img {
           width: 80%;
       }
@@ -97,10 +93,6 @@
           background: white;
           z-index: 2;
       }
-
-/*       .main-navbar--form {
-          z-index: 1;
-      } */
 
       .topnav.responsive .main-navbar {
           box-shadow: 0 0 2px 1px rgb(255, 0, 0, 0.1);
