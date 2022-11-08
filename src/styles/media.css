@@ -88,7 +88,7 @@
       }
 
       .main-navbar {
-          position: fixed;
+          position: absolute;
           right: 0;
           background: white;
           z-index: 2;
