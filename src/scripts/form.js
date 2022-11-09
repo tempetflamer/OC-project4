@@ -5,25 +5,60 @@ const submitInput = form[form.length - 1];
 
 
 /**
+* function to test the validity of birthdate
+* @param {*} value - input value
+* @returns - true to validate the form
+*/
+const checkBirthdate = (inputDate) => {
+    // Today Date intialize
+    let isValid = false;
+    const date = new Date();
+    const year = date.getFullYear();
+    const month = ('0' + (date.getMonth() + 1)).slice(-2);
+    const day = ('0' + date.getDate()).slice(-2)
+    const yearMin = year - 100;
+    const yearMax = year - 16;
+
+    // Input form
+    const inputDay = inputDate.slice(-2);
+    const inputMonth = inputDate.slice(5, -3);
+    const inputYear = inputDate.slice(0, -6);
+
+    // Age requirement 
+    if ((inputYear > (yearMin - 1) && inputYear < (yearMax + 1)) && (inputMonth > 0 && inputMonth < 13) && (inputDay > 0 && inputDay < (new Date(inputYear, inputMonth, 0).getDate()) + 1)) {
+        if (inputYear > (yearMin) && inputYear < (yearMax)) {
+            isValid = true;
+        }
+        else if ((inputYear == yearMin && inputMonth > month) || (inputYear == yearMax && inputMonth < month)) {
+            isValid = true;
+        }
+        else if ((inputYear == yearMin && inputMonth == month && inputDay > day - 1) || (inputYear == yearMax && inputMonth == month && inputDay < day + 1)) {
+            isValid = true;
+        }
+    }
+    return isValid;
+}
+
+/**
 * function to test the validity of firstname, lastname, email, birthdate, quantity
 * @param {*} value - input value
 * @param {number} i - Number for the element location
 * @returns - true to validate the form
 */
 const inputChecker = (value, i) => {
-    const Container = document.querySelectorAll('.formData')[i];
+    const container = document.querySelectorAll('.formData')[i];
     const errorDisplay = document.querySelectorAll('.formData > span')[i];
     let isValid = false;
 
     if (i == 0 || i == 1 || i == 3 || i == 4) {
-        if (value.length < 2 && i == 0 || value.length < 2 && i == 1) {
-            Container.classList.add("error");
+        if ( (i == 0 || i == 1) && (value.length < 2 || !value.match(/^[A-Za-z\é\è\ê\-]+$/gm)) ) {
+            container.classList.add("error");
             if (i == 0) { errorDisplay.textContent = "Veuillez entrer 2 caractères ou plus pour le champ du prénom."; }
             if (i == 1) { errorDisplay.textContent = "Veuillez entrer 2 caractères ou plus pour le champ du nom."; }
-        } else if (!value && i == 3 || !value && i == 4) {
-            Container.classList.add("error");
-            if (i == 3) { errorDisplay.textContent = "Veuillez entrer une date de naissance."; }
-            if (i == 4) { errorDisplay.textContent = "Veuillez entrer un chiffre."; }
+        } else if ((!value && (i == 3 || i == 4)) || (i == 4 && value < 0) || (i == 3 && !checkBirthdate(value))) {
+            container.classList.add("error");
+            if (i == 3) { errorDisplay.textContent = "Veuillez entrer une date de naissance entre 16 et 100 ans."; }
+            if (i == 4) { errorDisplay.textContent = "Veuillez entrer un nombre positif."; }
         } else {
             errorDisplay.textContent = "";
             isValid = true;
@@ -31,7 +66,7 @@ const inputChecker = (value, i) => {
     }
     if (i == 2) {
         if (!value.match(/[a-zA-Z0-9]+@[a-zA-Z]+\.[a-zA-Z]{2,9}/mg)) {
-            Container.classList.add("error");
+            container.classList.add("error");
             errorDisplay.textContent = "Veuillez entrer une adresse mail valide.";
         } else {
             errorDisplay.textContent = "";
@@ -106,7 +141,6 @@ function submit(e) {
      * else stay on the registration modal and preventing the display of the confirmation modal 
      */
     if ((!inputChecker(firstname, 0) || !inputChecker(lastname, 1) || !inputChecker(email, 2) || !inputChecker(birthdate, 3) || !inputChecker(quantity, 4) || !rbChecker() || !checkboxChecker())) {
-        document.querySelector(".modal-body").style.display = "block";
         document.querySelector(".formConfirmation").style.display = "none";
     }
     else {
