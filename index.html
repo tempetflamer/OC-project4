@@ -3,12 +3,14 @@
 
 <head>
   <meta charset="utf-8" />
-  <title>Reservation</title>
+  <title>GameOn - Reservation</title>
   <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="Inscription à des évènements gaming">
   <link rel="stylesheet" href="src/styles/modal.css" />
   <link rel="stylesheet" href="src/styles/media.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link href="https://fonts.googleapis.com/css?family=DM+Sans" rel="stylesheet" />
+  <link rel="icon" type="image/x-icon" href="src/img/Logo.ico">
 </head>
 
 <body>
@@ -71,28 +73,32 @@
           <form name="reserve" action="index.html" method="get" onsubmit="return validate();">
             <div class="formData">
               <label for="first">Prénom</label><br>
-              <input class="text-control" type="text" id="first" name="first" minlength="2" placeholder="Votre prénom ici" required/><br>
+              <input class="text-control" type="text" id="first" name="first" minlength="2"
+                placeholder="Votre prénom ici" required /><br>
               <span></span>
             </div>
 
             <div class="formData">
               <label for="last">Nom</label><br>
-              <input class="text-control" type="text" id="last" name="last" minlength="2" placeholder="Votre nom ici" required/><br>
+              <input class="text-control" type="text" id="last" name="last" minlength="2" placeholder="Votre nom ici"
+                required /><br>
               <span></span>
             </div>
             <div class="formData">
               <label for="email">E-mail</label><br>
-              <input class="text-control" type="email" id="email" name="email" placeholder="email@domaine.com" required/><br>
+              <input class="text-control" type="email" id="email" name="email" placeholder="email@domaine.com"
+                required /><br>
               <span></span>
             </div>
             <div class="formData">
               <label for="birthdate">Date de naissance</label><br>
-              <input class="text-control" type="date" id="birthdate" name="birthdate" required/><br>
+              <input class="text-control" type="date" id="birthdate" name="birthdate" required /><br>
               <span></span>
             </div>
             <div class="formData">
               <label>À combien de tournois GameOn avez-vous déjà participé ?</label><br>
-              <input type="number" class="text-control" id="quantity" name="quantity" min="0" max="99" placeholder="0" required>
+              <input type="number" class="text-control" id="quantity" name="quantity" min="0" max="99" placeholder="0"
+                required>
               <span></span>
             </div>
             <p class="text-label">A quel tournoi souhaitez-vous participer cette année ?</p>
