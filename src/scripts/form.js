@@ -51,7 +51,7 @@ const inputChecker = (value, i) => {
     let isValid = false;
 
     if (i == 0 || i == 1 || i == 3 || i == 4) {
-        if ( (i == 0 || i == 1) && (value.length < 2 || !value.match(/^[A-Za-z\é\è\ê\-]+$/gm)) ) {
+        if ((i == 0 || i == 1) && (value.length < 2 || !value.match(/^[A-Za-z\é\è\ê\-]+$/gm))) {
             container.classList.add("error");
             if (i == 0) { errorDisplay.textContent = "Veuillez entrer 2 caractères ou plus pour le champ du prénom."; }
             if (i == 1) { errorDisplay.textContent = "Veuillez entrer 2 caractères ou plus pour le champ du nom."; }
@@ -134,16 +134,20 @@ function submit(e) {
     const birthdate = document.getElementById('birthdate').value;
     const quantity = document.getElementById('quantity').value;
 
-    inputChecker(firstname, 0), inputChecker(lastname, 1), inputChecker(email, 2), inputChecker(birthdate, 3), inputChecker(quantity, 4), rbChecker(), checkboxChecker();
+    //inputChecker(firstname, 0), inputChecker(lastname, 1), inputChecker(email, 2), inputChecker(birthdate, 3), inputChecker(quantity, 4), rbChecker(), checkboxChecker();
+    var inputFirstCheck = inputChecker(firstname, 0);
+    var inputLastCheck = inputChecker(lastname, 1);
+    var inputEmailCheck = inputChecker(email, 2); 
+    var inputBirthdateCheck = inputChecker(birthdate, 3);
+    var inputQuantityCheck = inputChecker(quantity, 4);
+    var inputRBCheck = rbChecker();
+    var inputCheckboxCheck = checkboxChecker();
 
     /**
      * if valid, switch to confirmation modal,
      * else stay on the registration modal and preventing the display of the confirmation modal 
      */
-    if ((!inputChecker(firstname, 0) || !inputChecker(lastname, 1) || !inputChecker(email, 2) || !inputChecker(birthdate, 3) || !inputChecker(quantity, 4) || !rbChecker() || !checkboxChecker())) {
-        document.querySelector(".formConfirmation").style.display = "none";
-    }
-    else {
+    if ((inputFirstCheck && inputLastCheck && inputEmailCheck && inputBirthdateCheck && inputQuantityCheck && inputRBCheck && inputCheckboxCheck)) {
         document.querySelector(".modal-body").style.display = "none";
         document.querySelector(".formConfirmation").style.display = "block";
         document.querySelector(".formConfirmation > span").innerHTML = "Merci pour <br> votre inscription"
