@@ -3,8 +3,6 @@ const modalbg = document.querySelector(".bground");
 const modalBtn = document.querySelectorAll(".modal-btn");
 const closeBtn = document.querySelector(".close");
 const btnSubmit = document.querySelector(".btn-submit");
-const modalConfirmation = document.querySelector(".formConfirmation");
-const spanModalValid = document.querySelector(".formConfirmation > span");
 const btnConfirmSubmit = document.querySelector(".btn-confirmation-submit");
 var btnSignup = document.querySelectorAll(".btn-signup")[1];
 
@@ -44,14 +42,6 @@ function closeModal() {
 }
 
 closeBtn.addEventListener("click", closeModal);
-
-// Open confirmation modal
- function launchModalConfirmation() {
-  modalConfirmation.style.display = "block";
-  spanModalValid.innerHTML = "Merci pour <br> votre inscription";
-}
-
-btnSubmit.addEventListener("click", launchModalConfirmation);
 
 // Close confirmation modal
 function closeModalConfirmation() {

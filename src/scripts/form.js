@@ -146,6 +146,7 @@ function submit(e) {
     else {
         document.querySelector(".modal-body").style.display = "none";
         document.querySelector(".formConfirmation").style.display = "block";
+        document.querySelector(".formConfirmation > span").innerHTML = "Merci pour <br> votre inscription"
 
         closeBtn.classList.add("cleanForm");
         const xcleanModal = document.querySelector(".cleanForm");
