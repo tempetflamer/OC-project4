@@ -26,18 +26,14 @@ function birthdate(){
 }
 
 
-// function to change menu zindex
-function setZIndexSignup() {
-  document.querySelector(".main-navbar").style.zIndex = 1;
-}
-
 // launch modal form
 function launchModal() {
   modalbg.style.display = "block";
 }
 
 function initModal() {
-  setZIndexSignup();
+  // Change Zindex menu
+  document.querySelector(".main-navbar").style.zIndex = 1;
   birthdate();
 }
 
