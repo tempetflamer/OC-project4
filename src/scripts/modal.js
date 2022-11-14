@@ -5,13 +5,14 @@ const closeBtn = document.querySelector(".close");
 const btnSubmit = document.querySelector(".btn-submit");
 const btnConfirmSubmit = document.querySelector(".btn-confirmation-submit");
 var btnSignup = document.querySelectorAll(".btn-signup")[1];
+var btnSignupD = document.querySelectorAll(".btn-signup")[0];
 
 
 // launch modal event
 modalBtn.forEach((btn) => btn.addEventListener("click", launchModal));
 
 // function to format min and max in birthdate
-function birthdate(){
+function initBirthdate(){
   const date = new Date();
   const year = date.getFullYear();
   const month = ('0' + (date.getMonth() + 1)).slice(-2);
@@ -32,7 +33,7 @@ function launchModal() {
 function initModal() {
   // Change Zindex menu
   document.querySelector(".main-navbar").style.zIndex = 1;
-  birthdate();
+  initBirthdate();
 }
 
 // Close modal form
@@ -73,4 +74,5 @@ function setCleanModal() {
 };
 
 btnSignup.addEventListener("click", (e) => initModal(e));
+btnSignupD.addEventListener("click", (e) => initModal(e));
 btnConfirmSubmit.addEventListener("click", closeModalConfirmation);
