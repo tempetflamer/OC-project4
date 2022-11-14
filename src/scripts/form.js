@@ -135,13 +135,13 @@ function submit(e) {
     const quantity = document.getElementById('quantity').value;
 
     //inputChecker(firstname, 0), inputChecker(lastname, 1), inputChecker(email, 2), inputChecker(birthdate, 3), inputChecker(quantity, 4), rbChecker(), checkboxChecker();
-    var inputFirstCheck = inputChecker(firstname, 0);
-    var inputLastCheck = inputChecker(lastname, 1);
-    var inputEmailCheck = inputChecker(email, 2); 
-    var inputBirthdateCheck = inputChecker(birthdate, 3);
-    var inputQuantityCheck = inputChecker(quantity, 4);
-    var inputRBCheck = rbChecker();
-    var inputCheckboxCheck = checkboxChecker();
+    const inputFirstCheck = inputChecker(firstname, 0);
+    const inputLastCheck = inputChecker(lastname, 1);
+    const inputEmailCheck = inputChecker(email, 2); 
+    const inputBirthdateCheck = inputChecker(birthdate, 3);
+    const inputQuantityCheck = inputChecker(quantity, 4);
+    const inputRBCheck = rbChecker();
+    const inputCheckboxCheck = checkboxChecker();
 
     /**
      * if valid, switch to confirmation modal,

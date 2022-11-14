@@ -4,8 +4,7 @@ const modalBtn = document.querySelectorAll(".modal-btn");
 const closeBtn = document.querySelector(".close");
 const btnSubmit = document.querySelector(".btn-submit");
 const btnConfirmSubmit = document.querySelector(".btn-confirmation-submit");
-var btnSignup = document.querySelectorAll(".btn-signup")[1];
-var btnSignupD = document.querySelectorAll(".btn-signup")[0];
+const btnSignup = document.querySelectorAll(".btn-signup");
 
 
 // launch modal event
@@ -73,6 +72,5 @@ function setCleanModal() {
   closeBtn.classList.remove("cleanForm");
 };
 
-btnSignup.addEventListener("click", (e) => initModal(e));
-btnSignupD.addEventListener("click", (e) => initModal(e));
+btnSignup.forEach(btn => btn.addEventListener("click", (e) => initModal(e)));
 btnConfirmSubmit.addEventListener("click", closeModalConfirmation);
