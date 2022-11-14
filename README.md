@@ -37,8 +37,11 @@ Ajouter le code JavaScript manquant pour que le formulaire soit pleinement fonct
 
 ## Ressources du projets :
 
+### Maquette
+[repo Issues](https://www.figma.com/file/B7NKBDvSI18uoMLJgpnh48/UI-Design-GameOn-FR?node-id=106%3A630)
+
 ### Héberhement
-[Projet 4 - GameOn](https://.github.io/test/)
+[Projet 4 - GameOn](https://tempetflamer.github.io/OC-projet4/)
 
 ### Github forké
 [repo GitHub forké](https://github.com/OpenClassrooms-Student-Center/GameOn-website-FR/)
