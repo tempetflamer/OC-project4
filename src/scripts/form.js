@@ -134,7 +134,6 @@ function submit(e) {
     const birthdate = document.getElementById('birthdate').value;
     const quantity = document.getElementById('quantity').value;
 
-    //inputChecker(firstname, 0), inputChecker(lastname, 1), inputChecker(email, 2), inputChecker(birthdate, 3), inputChecker(quantity, 4), rbChecker(), checkboxChecker();
     const inputFirstCheck = inputChecker(firstname, 0);
     const inputLastCheck = inputChecker(lastname, 1);
     const inputEmailCheck = inputChecker(email, 2); 
