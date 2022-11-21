@@ -46,6 +46,7 @@ closeBtn.addEventListener("click", closeModal);
 // Close confirmation modal
 function closeModalConfirmation() {
   modalbg.style.display = "none";
+  setCleanModal();
   window.location.reload();
 }
 
@@ -70,6 +71,7 @@ function setCleanModal() {
 
   document.querySelector(".main-navbar").style.zIndex = 2;
   closeBtn.classList.remove("cleanForm");
+  window.location.reload();
 };
 
 btnSignup.forEach(btn => btn.addEventListener("click", (e) => initModal(e)));
